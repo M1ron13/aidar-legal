@@ -1,4 +1,9 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Вход выполнен</title>
-<style>body{font:18px/1.6 system-ui,sans-serif;max-width:640px;margin:60px auto;padding:0 16px;color:#13233D}code{display:block;background:#F5F1E8;padding:12px;word-break:break-all;border-radius:8px}</style></head><body>
-<h1 id="h">Вход выполнен ✅</h1><p id="p">Скопируйте адрес этой страницы из адресной строки целиком и отправьте его в чат Claude. Код действует несколько минут и одноразовый.</p><code id="c"></code>
-<script>var q=new URLSearchParams(location.search);document.getElementById('c').textContent=location.href;if(q.get('error')){document.getElementById('h').textContent='Вход не выполнен';}</script></body></html>
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Signed in · Вход выполнен</title>
+<style>body{font:18px/1.6 system-ui,sans-serif;max-width:640px;margin:60px auto;padding:0 16px;color:#0A1A14}code{display:block;background:#F4F1E6;padding:12px;word-break:break-all;border-radius:8px}</style></head><body>
+<h1 id="h">Signed in ✅ · Вход выполнен</h1><p id="p">Returning to aidar.fin publisher… Если окно не вернулось само — скопируйте адрес этой страницы целиком и отправьте его в чат Claude. Код одноразовый и действует несколько минут.</p><code id="c"></code>
+<script>
+var q=new URLSearchParams(location.search);document.getElementById('c').textContent=location.href;
+if(q.get('error')){document.getElementById('h').textContent='Sign-in failed · Вход не выполнен';}
+// настольное приложение завода (publisher_ui.py) слушает 127.0.0.1:8765 — возвращаем код туда
+else if((q.get('state')||'').indexOf('local')===0){location.replace('http://127.0.0.1:8765/cb'+location.search);}
+</script></body></html>
